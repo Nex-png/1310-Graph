@@ -63,6 +63,18 @@ class GraphList
 
 
         // TODO: print graph to screen
+		void printAdjacencyList(){
+			cout << "Adjacency List..." << endl;
+			for(int i = 0; i < numOfVertices; i++){
+				cout << i << "--->";
+				ListNode* current = headArray[i];
+				while(current != NULL){
+					cout << current->value << "--->";
+					current = current->next;
+				}
+				cout << "NULL" << endl;
+			}
+		}
 
         // TODO: CHANGE VARIABLE NAMES TO MATCH WHAT YOU MADE THEM.
         // OR COMMENT THIS OUT IF YOU DON'T CARE ABOUT GraphViz
