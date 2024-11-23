@@ -52,16 +52,9 @@ class GraphList
 
 		}
 
-		// TODO: addEdge
-		// void addEdge(int index, int value){
-		// 	ListNode* newNode = new ListNode(value);
-		// 	newNode->next = headArray[index];
-		// 	headArray[index] = newNode;
-		// 	numOfEdges++;
-		// 	cout << "Added edge from " << index << " to " << value << endl;
 
 			
-		// }
+		// tripped me up at first as I was at first adding the edges at the front rather than the back.
 		void addEdge(int index, int value){
 			ListNode* newNode = new ListNode(value);
 			
