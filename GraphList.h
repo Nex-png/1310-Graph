@@ -13,6 +13,10 @@ class GraphList
 		{
 			int value;
 			ListNode *next;
+			ListNode(double nodeValue){
+				value = nodeValue;
+				next = NULL;
+			}
 			
 		};
 		ListNode** headArray;
@@ -35,11 +39,25 @@ class GraphList
 		}
         // TODO: Destructor
 		~GraphList(){
+			for(int i = 0; i < numOfVertices; i++){
+				ListNode* current = headArray[i];
+				while(current != nullptr){
+					ListNode* temp = current;
+					current = current->next;
+					delete temp;
+				}
+			}
+
+			delete[] headArray;
 
 		}
 
 		// TODO: addEdge
 		void addEdge(int index, int value){
+			ListNode* newNode = new ListNode(value);
+			newNode->next = headArray[index];;
+			headArray[index] = newNode;
+			numOfEdges++;
 			
 		}
 
