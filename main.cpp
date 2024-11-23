@@ -10,6 +10,9 @@ int main(){
     int numVertices;
     inputFile >> numVertices;
 
+    cout << "There are  " <<  numVertices <<" vertices in the Graph" << endl;
+    cout << "\n\n";
+
     GraphList graph(numVertices);
     int startVertext, endvertext;
 

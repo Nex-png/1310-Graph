@@ -53,20 +53,36 @@ class GraphList
 		}
 
 		// TODO: addEdge
-		void addEdge(int index, int value){
-			ListNode* newNode = new ListNode(value);
-			newNode->next = headArray[index];
-			headArray[index] = newNode;
-			numOfEdges++;
-			cout << "Added edge from " << index << " to " << value << endl;
+		// void addEdge(int index, int value){
+		// 	ListNode* newNode = new ListNode(value);
+		// 	newNode->next = headArray[index];
+		// 	headArray[index] = newNode;
+		// 	numOfEdges++;
+		// 	cout << "Added edge from " << index << " to " << value << endl;
 
 			
+		// }
+		void addEdge(int index, int value){
+			ListNode* newNode = new ListNode(value);
+			
+			if(headArray[index] == nullptr){
+				headArray[index] = newNode;
+			}
+			else{
+				ListNode* current = headArray[index];
+				while(current->next != nullptr){
+					current = current->next;
+				}
+				current->next = newNode;
+			}
+			numOfEdges++;
+			cout << "Added edge from " << index << " to " << value << endl;
 		}
 
 
         // TODO: print graph to screen
 		void printAdjacencyList(){
-			cout << "Adjacency List..." << endl;
+			cout << "\n\nAdjacency List..." << endl;
 			for(int i = 0; i < numOfVertices; i++){
 				cout << i << "--->";
 				ListNode* current = headArray[i];
