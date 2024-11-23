@@ -13,7 +13,7 @@ class GraphList
 		{
 			int value;
 			ListNode *next;
-			ListNode(double nodeValue){
+			ListNode(int nodeValue){
 				value = nodeValue;
 				next = NULL;
 			}
@@ -55,9 +55,11 @@ class GraphList
 		// TODO: addEdge
 		void addEdge(int index, int value){
 			ListNode* newNode = new ListNode(value);
-			newNode->next = headArray[index];;
+			newNode->next = headArray[index];
 			headArray[index] = newNode;
 			numOfEdges++;
+			cout << "Added edge from " << index << " to " << value << endl;
+
 			
 		}
 
@@ -68,11 +70,11 @@ class GraphList
 			for(int i = 0; i < numOfVertices; i++){
 				cout << i << "--->";
 				ListNode* current = headArray[i];
-				while(current != NULL){
+				while(current != nullptr){
 					cout << current->value << "--->";
 					current = current->next;
 				}
-				cout << "NULL" << endl;
+				cout << "NULL" << endl; 
 			}
 		}
 
@@ -92,12 +94,12 @@ class GraphList
 				nodePtr = headArray[i];
 				graphOut << i;
 
-				while(nodePtr != NULL)
+				while(nodePtr != nullptr)
 				{
 					graphOut << "->" << nodePtr->value << endl;
 					nodePtr = nodePtr->next;
 					atleastone = true;
-					if(nodePtr != NULL)
+					if(nodePtr != nullptr)
 						graphOut << i; 
 				}
 

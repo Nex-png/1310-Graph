@@ -1,10 +1,10 @@
 #include <iostream>
 #include <fstream>
-#include <GraphList.h>
+#include "GraphList.h"
 using namespace std;
 
 int main(){
-    string filename = "graph.txt";
+    string filename = "graph_1.txt";
     ifstream inputFile(filename);
     
     int numVertices;
