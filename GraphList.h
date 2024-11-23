@@ -9,13 +9,40 @@ class GraphList
 {
 	private:
 		// TODO: build node struct and add class variables
+		struct ListNode
+		{
+			int value;
+			ListNode *next;
+			
+		};
+		ListNode** headArray;
+		int numOfVertices;
+		int numOfEdges;
+
+		
 		
 	public:
         // TODO: Constructor
+		GraphList(int Vertices){
+			numOfVertices = Vertices;
+			numOfEdges = 0;
+			headArray = new ListNode*[Vertices];
+			for(int i = 0; i < Vertices; i++){
+				headArray[i] = nullptr;
+			}
+		
 
+		}
         // TODO: Destructor
+		~GraphList(){
+
+		}
 
 		// TODO: addEdge
+		void addEdge(int index, int value){
+			
+		}
+
 
         // TODO: print graph to screen
 
@@ -29,7 +56,7 @@ class GraphList
 
 			graphOut<<"digraph {" << endl; 
 
-			for(int i=0; i<numVertices; i++) {
+			for(int i=0; i<numOfVertices; i++) {
 
 				bool atleastone = false;
 				nodePtr = headArray[i];
